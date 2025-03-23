@@ -1,0 +1,1 @@
+<img src="{{ asset('vendor/laravel-crm/img/a2b.png')  }}" width="40">
