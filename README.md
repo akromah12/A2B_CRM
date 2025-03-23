@@ -1,57 +1,80 @@
-# Laravel CRM Starter
+# AI-Powered CRM for SMEs (A2B CRM)
 
-A complete starter project for the [Laravel CRM Package](https://github.com/venturedrake/laravel-crm). 
+## Project Overview
+A2B CRM is an AI-driven Customer Relationship Management (CRM) solution designed for Small and Medium Enterprises (SMEs). It integrates artificial intelligence features such as sentiment analysis, chatbots, and predictive analytics to enhance customer engagement and automate business workflows.
 
-This project uses Laravel 9 with the starter kit [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits#laravel-breeze).
+## Features
+- AI-powered chatbot for automated customer interactions
+- Sentiment analysis for customer feedback and communication
+- Predictive analytics for lead scoring and customer retention
+- Interactive dashboards for customer insights
+- Secure authentication and role-based access control
 
-# Requirements
+## Requirements
+To set up the project locally, ensure you have the following installed:
 
-- **PHP**: 8.0 or higher
-- **For MySQL users**: 5.7.23 or higher
-- **For MariaDB users**: 10.2.7 or higher
+1. **XAMPP (PHP & MySQL)** – [Download Here](https://www.apachefriends.org/download.html)
+2. **Composer (PHP Dependency Manager)** – [Download Here](https://getcomposer.org/download/)
+3. **Node.js & npm** – [Download Here](https://nodejs.org/)
+4. **Git (Version Control)** – [Download Here](https://git-scm.com/downloads)
 
-# Installation
+## Installation Guide
 
-## Clone the repo
+### 1. Clone the Repository
 
-```bash
-git clone --depth=1 https://github.com/venturedrake/laravel-crm-starter.git
-```
-
-This will create a shallow clone of the repo, from there you would just need to remove the `.git` folder and reinitialise it to make it your own.
-
-Then install composer dependencies
-
-```bash
+### 2. Install Dependencies
+```sh
 composer install
 ```
 
-## Configure the Laravel app
-
-Copy the `.env.example` file to `.env` and make sure the details match to your install.
-
-```shell
-cp .env.example .env
-```
-
-All the relevant configuration files should be present in the repo.
-
-## Complete the installation
-
-Generate the application key
-
-```
+### 3. Set Up Environment Variables
+Copy the `.env.example` file and rename it to `.env`. 
+Then, generate the application key:
+```sh
 php artisan key:generate
 ```
-
 Link the storage directory
 
 ```
 php artisan storage:link
 ```
 
-Install Laravel CRM
+### 4. Configure the Database
+Create a MySQL database matching the name set in `.env`. Then, run migrations:
+```sh
+php artisan migrate --seed
+```
+
+### 5. Start the Development Server
+```sh
+php artisan serve
+```
+
+### 6. Compile Frontend Assets
+```sh
+npm run dev
+```
+
+## API Integration
+This project integrates AI services via external APIs (e.g., OpenAI). To configure API access, add your API keys in the `.env` file:
+```sh
+AI_API_KEY=your_api_key_here
 
 ```
-php artisan laravelcrm:install
-```
+
+## Basic Commands
+| Command | Description |
+|---------|-------------|
+| `php artisan migrate` | Run database migrations |
+| `php artisan db:seed` | Seed the database with test data |
+| `php artisan serve` | Start the Laravel development server |
+| `npm run dev` | Compile frontend assets |
+| `php artisan test` | Run application tests |
+
+## Contributing
+1. Create a feature branch: `git checkout -b feature-branch-name`.
+2. Commit your changes: `git commit -m 'Add new feature'`.
+. Push to the branch: `git push origin feature-branch-name`.
+5. Open a pull request.
+
+
